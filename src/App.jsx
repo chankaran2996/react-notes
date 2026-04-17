@@ -1,3 +1,4 @@
+import Count from "./components/Count"
 import Example from "./components/Example"
 import Sample from "./Sample"
 
@@ -22,7 +23,8 @@ const App = () => {
     <>
       
       {/* <Sample name = {name} age={60} message = {message} /> */}
-      <Sample person = {person} handileClick={handileClick} arr={arr}/>
+      {/* <Sample person = {person} handileClick={handileClick} arr={arr}/> */}
+      <Count />
     </>
   )
 }
