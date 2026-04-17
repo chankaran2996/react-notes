@@ -1,5 +1,6 @@
 import Count from "./components/Count"
 import Example from "./components/Example"
+import LoginPage from "./pages/LoginPage"
 import Sample from "./Sample"
 
 const App = () => {
@@ -24,7 +25,9 @@ const App = () => {
       
       {/* <Sample name = {name} age={60} message = {message} /> */}
       {/* <Sample person = {person} handileClick={handileClick} arr={arr}/> */}
-      <Count />
+      {/* <Count /> */}
+      {/* <Sample /> */}
+      <LoginPage />
     </>
   )
 }

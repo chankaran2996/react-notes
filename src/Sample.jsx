@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Example from './components/Example'
 import ListItems from './components/ListItems'
+import Par from './components/Par'
 
-const Sample = ({ person , handileClick , arr}) => {
+const Sample = () => {
+    const [name , setName] = useState("")
+
+    const handleChange = (e) => {
+        setName(e.target.value)
+    }
+    console.log("name from Sample Component:", name)
   return (
     <div 
     className=' text-2xl text-red-800 font-bold'
@@ -18,7 +25,7 @@ const Sample = ({ person , handileClick , arr}) => {
                 Click Me
             </button>
         </div> */}
-        <p>Welocome to Sample Component : 
+        {/* <p>Welocome to Sample Component : 
         {
             person.name
         }
@@ -45,8 +52,19 @@ const Sample = ({ person , handileClick , arr}) => {
                     ))
                 }
             </ul>
-        </div>
+        </div> */}
+
         
+        <input 
+        type="text" 
+        placeholder='Enter Your Name'
+        className=' border-2 border-gray-300 rounded px-4 py-2'
+        onChange={handleChange}
+        />
+        <p>
+            Welocome to Sample Component : {name}
+        </p>
+        <Par />
     </div>
     
   )
