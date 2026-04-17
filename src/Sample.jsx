@@ -1,7 +1,8 @@
 import React from 'react'
 import Example from './components/Example'
+import ListItems from './components/ListItems'
 
-const Sample = ({ name, age = 20, message }) => {
+const Sample = ({ person , handileClick , arr}) => {
   return (
     <div 
     className=' text-2xl text-red-800 font-bold'
@@ -19,15 +20,32 @@ const Sample = ({ name, age = 20, message }) => {
         </div> */}
         <p>Welocome to Sample Component : 
         {
-            name
+            person.name
         }
         </p>
         <p>
-            Age : {age}
+            Age : {person.age}
         </p>
         <p>
-            Message : {message}
+            Message : {person.message}
         </p>
+
+        <button
+        className='bg-blue-500 text-white px-4 py-2 rounded'
+        onClick={handileClick}
+        >
+            Click Me
+        </button>
+
+        <div>
+            <ul>
+                {
+                    arr.map((item,index) => (
+                        <ListItems item={item} i={index} />
+                    ))
+                }
+            </ul>
+        </div>
         
     </div>
     
