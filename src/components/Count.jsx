@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Count = () => {
 
@@ -10,6 +11,10 @@ const Count = () => {
 
     const decrement = () => {
         setCount(count - 1)
+    }
+    const nav = useNavigate();
+    const handileClick = () => {
+        nav("/login")
     }
   return (
     <div>
@@ -25,6 +30,12 @@ const Count = () => {
         onClick={decrement}
         >
             Decrement
+        </button>
+        <button
+        onClick={handileClick}
+        className='bg-green-500 text-white px-4 py-2 rounded'
+        >
+            Login
         </button>
     </div>
   )

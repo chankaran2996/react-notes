@@ -1,7 +1,9 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Count from "./components/Count"
 import Example from "./components/Example"
 import LoginPage from "./pages/LoginPage"
 import Sample from "./Sample"
+import PageNotFound from "./components/PageNotFound"
 
 const App = () => {
   // let name = "John Doe"
@@ -22,12 +24,21 @@ const App = () => {
   
   return (
     <>
+    <BrowserRouter>
       
       {/* <Sample name = {name} age={60} message = {message} /> */}
       {/* <Sample person = {person} handileClick={handileClick} arr={arr}/> */}
       {/* <Count /> */}
       {/* <Sample /> */}
-      <LoginPage />
+      {/* <LoginPage /> */}
+      <Routes>
+        <Route path="/login" element= {<LoginPage/>} />
+        <Route path="/" element = {<Count/>} />
+        <Route path="/sample" element = {<Sample/>} />
+        <Route path="*" element={<PageNotFound/>} />
+
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }
